@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { fetchCustomers } from "./asyncActions/customers";
 import {
   addCustomerAction,
   deleteCustomerAction,
@@ -41,6 +42,9 @@ function App() {
       </button>
       <button onClick={() => addCustomer(prompt())}>
         Добавить пользователя
+      </button>
+      <button onClick={() => dispatch(fetchCustomers())}>
+        Добавить пользователей
       </button>
       {customers.length > 0 ? (
         <div>
